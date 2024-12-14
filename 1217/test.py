@@ -29,7 +29,7 @@ st.sidebar.title("目的選択メニュー")
 
 # 目的地選択
 st.sidebar.subheader("目的を選択してください")
-destination_csv = "destinations.csv"  # CSVファイルのパス
+destination_csv = "./destinations.csv"  # CSVファイルのパス
 try:
     destinations = load_destinations(destination_csv)
     selected_destination = st.sidebar.selectbox("目的地", sorted(destinations))
@@ -56,7 +56,7 @@ if st.sidebar.button("確定"):
     image_placeholder = st.empty()
 
     # 表示する画像のリスト
-    image_paths = ["0.png", "1.png", "2.png"]  # 画像ファイルを指定
+    image_paths = ["./0.png", "./1.png", "./2.png"]  # 画像ファイルを指定
     for image in image_paths:
         image_placeholder.image(image, use_container_width=True)  # 同じ位置に画像を更新
         time.sleep(1.5)  # 1.5秒ごとに画像を切り替え
